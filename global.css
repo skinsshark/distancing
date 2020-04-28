@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #9AA5BB;
+  scroll-behavior: smooth;
+  margin: 0;
+}
+
+body.loading {
+  opacity: 0;
+  transition: 1s linear opacity;
+}
+
+body {
+  font-family: 'Ovo', serif;
+  padding: 35px 90px;
+  background-color: #9AA5BB;
+  font-size: 10px;
+  position: relative;
+  opacity: 1;
+  transition: 1s linear opacity;
+}
+
+body, h1, h2, h3, p, button {
+  margin: 0;
+  font-weight: normal;
+  font-family: 'Ovo', serif;
+}
+
+p {
+  font-size: 2.5em;
+}
+
+button, a {
+  color: #000;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8em;
+  background: none;
+  background-color: #fff;
+  outline: none;
+  border: 1px solid #333;
+  padding: 10px 30px;
+  margin: 30px 0 0;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 10.5em;
+  max-width: 7em;
+  transition: 1s linear opacity;
+}
+
+h2 {
+  font-size: 9.55em;
+}
+
+h2 .result {
+  margin-left: 2em;
+  letter-spacing: 0.5em;
+}
+
+h3 {
+  font-size: 4em;
+  margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 992px){
+  body {
+    font-size: 8px;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  body {
+    font-size: 4px;
+    padding: 20px 30px;
+  }
+
+  p {
+    font-size: 5em;
+  }
+
+  h3 {
+    font-size: 6.5em;
+  }
+
+  section > h3 {
+    margin-top: 70px;
+  }
+
+  h2 {
+    font-size: 10em;
+  }
+}
+
+body {
+  min-height: 10000000000000vh;
+}
