@@ -26,6 +26,7 @@ export default function Home() {
         <title>Social Distance This for Me</title>
         <link rel="icon" href="/favicon.ico" />
 
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
           content="Let's make the internet social distance too"

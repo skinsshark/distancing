@@ -23,7 +23,7 @@ body {
   transition: 1s linear opacity;
 }
 
-body, h1, h2, h3, p, button {
+body, h1, h2, h3, h4, p, button {
   margin: 0;
   font-weight: normal;
   font-family: 'Ovo', serif;
@@ -51,6 +51,15 @@ button {
   cursor: pointer;
 }
 
+u, .hyperlink {
+  text-decoration: none;
+  border-bottom: 2px solid #000;
+}
+
+.hyperlink {
+  font-size: 0.5em;
+}
+
 h1 {
   font-size: 10.5em;
   max-width: 7em;
@@ -67,8 +76,16 @@ h2 .result {
 }
 
 h3 {
+  font-size: 7em;
+  text-align: center;
+}
+
+h3 ~ h4 {
+  margin-top: 2em;
+}
+
+h4 {
   font-size: 4em;
-  margin-bottom: 30px;
 }
 
 @media only screen and (max-width: 992px){

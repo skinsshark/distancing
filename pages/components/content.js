@@ -10,7 +10,7 @@ export default function Content() {
       <section>
         <article></article>
         <article>
-          <h3>A customizable, easy-to-add script for your website to enforce social distancing even on the web</h3>
+          <h4>A customizable, easy-to-add script for your website to enforce social distancing even on the web</h4>
         </article>
       </section>
 
@@ -29,6 +29,31 @@ export default function Content() {
         </article>
         <article>
           <img src="./assets/example-after.png" />
+        </article>
+      </section>
+
+      <section className="singular">
+        <article>
+          <h3>
+            To try it out now, type "<u>STAYHOME</u>" to toggle social distancing on this site
+          </h3>
+          <h4>
+            No visual cues, no visible feedback by default, so now it's your job to spread the word and help the user become aware and make use of the feature
+          </h4>
+        </article>
+      </section>
+
+      <section className="singular">
+        <article className="heading">
+          <h3>Installation</h3>
+        </article>
+      </section>
+
+      <section className="singular">
+        <article>
+          <h4>
+            To try it out now, type "<u>STAYHOME</u>" to toggle social distancing on this site (yes, blindly)
+          </h4>
         </article>
       </section>
 
@@ -69,7 +94,11 @@ export default function Content() {
         }
 
         article {
-          padding: 50px 70px 90px;
+          padding: 50px 90px 90px;
+        }
+
+        article.heading {
+          padding: 30px 70px;
         }
 
         article img {
