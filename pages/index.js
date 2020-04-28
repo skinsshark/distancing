@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Content from './components/content'
 import Head from 'next/head'
 
 export default function Home() {
@@ -22,9 +23,14 @@ export default function Home() {
   return (
     <div className={`${isBarVisible ? 'welcomed' : ''}`}>
       <Head>
-        <title>A Journal</title>
+        <title>Social Distance This for Me</title>
         <link rel="icon" href="/favicon.ico" />
-        <link href="https://fonts.googleapis.com/css2?family=Ovo&display=swap" rel="stylesheet" />
+
+        <meta
+          name="description"
+          content="Let's make the internet social distance too"
+        />
+        <meta property="og:image" content="https://distancing.now.sh/preview.png" />
       </Head>
 
       <header>
@@ -43,6 +49,8 @@ export default function Home() {
         </div>
         <div className="arrow">&#10230;</div>
       </header>
+
+      <Content />
 
       <style jsx>{`
         header {
@@ -102,6 +110,45 @@ export default function Home() {
           .welcomed nav#bottomBar {
             bottom: 0;
             transition: 1s linear bottom;
+          }
+        }
+
+        .welcomed header .arrow,
+        .welcomed header .scroll-to-begin {
+          margin-top: 30px;
+          opacity: 0;
+        }
+
+        header .arrow,
+        header .scroll-to-begin {
+          margin-top: 30px;
+          text-align: center;
+          opacity: 1;
+          transition: 1s linear opacity;
+        }
+
+        header .arrow {
+          font-size: 3rem;
+          transform: rotate(90deg);
+        }
+
+        @media only screen and (min-width: 768px) {
+          .welcomed header .arrow,
+          .welcomed header .scroll-to-begin {
+            transition: 1s linear opacity;
+            opacity: 0;
+          }
+        }
+
+        @media only screen and (max-width: 767px) {
+          header {
+            min-height: 0;
+            margin-top: 50px;
+          }
+
+          header .arrow,
+          header .scroll-to-begin {
+            display: none;
           }
         }
       `}</style>
