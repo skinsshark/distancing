@@ -18,6 +18,10 @@ export default function Home() {
     HEADER_HEIGHT = wholeHeader.offsetHeight;
     TRIGGER_POINT = HEADER_HEIGHT/5;
     window.addEventListener('scroll', determineBarVisibility)
+
+    const socialDistancer = document.createElement('script');
+    socialDistancer.setAttribute('src','/social-distancer.min.js');
+    document.head.appendChild(socialDistancer);
   })
 
   return (

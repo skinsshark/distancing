@@ -1,4 +1,12 @@
 export default function Content() {
+  const downloadDefaultFile = () => {
+    const fileName = require('./getScriptText.js');
+    const a = document.getElementById("downloader");
+    const file = new Blob([fileName.getScriptText()], {type: "text/javascript"});
+    a.href = URL.createObjectURL(file);
+    a.download = "social-distancer.min.js";
+  }
+
   return (
     <main>
       <section className="singular">
@@ -8,7 +16,7 @@ export default function Content() {
       </section>
 
       <section>
-        <article></article>
+        <article className="web-x"></article>
         <article>
           <h4>A customizable, easy-to-add script for your website to enforce social distancing even on the web</h4>
         </article>
@@ -16,7 +24,7 @@ export default function Content() {
 
       <section>
         <article>
-          <p>So we can go from this</p>
+          <h5>So we can go from this</h5>
         </article>
         <article>
           <img src="./assets/example-before.png" />
@@ -25,7 +33,7 @@ export default function Content() {
 
       <section>
         <article>
-          <p>To this</p>
+          <h5>To this</h5>
         </article>
         <article>
           <img src="./assets/example-after.png" />
@@ -34,7 +42,7 @@ export default function Content() {
 
       <section className="singular">
         <article>
-          <h3>
+          <h3 className="web-x">
             To try it out now, type "<u>STAYHOME</u>" to toggle social distancing on this site
           </h3>
           <h4>
@@ -46,13 +54,28 @@ export default function Content() {
       <section className="singular">
         <article className="heading">
           <h3>Installation</h3>
+
+          <h4>
+            <a id="downloader">
+              <button onClick={downloadDefaultFile}>
+                <div className="label">Download minified script</div>
+                <svg height="0.8em" viewBox="0 0 512 512" width="0.8em" xmlns="http://www.w3.org/2000/svg"><path d="m409.785156 278.5-153.785156 153.785156-153.785156-153.785156 28.285156-28.285156 105.5 105.5v-355.714844h40v355.714844l105.5-105.5zm102.214844 193.5h-512v40h512zm0 0"/></svg>
+              </button>
+            </a>
+          </h4>
         </article>
       </section>
 
       <section className="singular">
+        <article className="web-x"></article>
         <article>
           <h4>
-            To try it out now, type "<u>STAYHOME</u>" to toggle social distancing on this site (yes, blindly)
+            Adding the script file to your website is easy. Simply paste the following to your html file, right above <code>{`</body>`}</code>. Make sure the source is pointing to your downloaded file:
+          </h4>
+          <h4 className="code">
+            <code>
+              {`<script type="text/javascript" src="./social-distancer.min.js"></script>`}
+            </code>
           </h4>
         </article>
       </section>
@@ -88,21 +111,87 @@ export default function Content() {
           width: 100%;
         }
 
+        section.singular article.web-x {
+          width: auto;
+        }
+
         section article:nth-child(2) {
           border-left: 1px solid #333;
           width: 75vw;
         }
 
         article {
-          padding: 50px 90px 90px;
+          padding: 50px 75px 90px;
         }
 
         article.heading {
           padding: 30px 70px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
 
         article img {
           width: 100%;
+        }
+
+        @media only screen and (max-width: 992px) {
+          article {
+            padding: 30px 60px 70px;
+          }
+        }
+
+        @media only screen and (max-width: 767px) {
+          article.heading {
+            padding-left: 20px;
+            padding-right: 20px;
+          }
+
+          section {
+            flex-wrap: wrap;
+            padding: 15px 0 40px;
+          }
+
+          article {
+            width: 100% !important;
+            border-left: none !important;
+            padding: 15px 20px;
+          }
+
+          .web-x {
+            display: none;
+          }
+
+          .web-x ~ h4 {
+            margin-top: 0;
+          }
+        }
+
+        button svg {
+          transform: rotate(-90deg);
+          margin-left: 25px;
+          transition: 0.2s linear transform;
+        }
+
+        button:hover svg {
+          transform: rotate(0);
+          transition: 0.2s linear transform;
+        }
+
+        @media only screen and (max-width: 767px) {
+          button {
+            padding: 10px 20px;
+            text-align: left;
+            width: 100%;
+          }
+
+          button .label {
+            width: 60%;
+          }
+
+          button svg {
+            margin: 0;
+          }
         }
       `}</style>
     </main>

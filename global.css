@@ -8,6 +8,16 @@ html {
   margin: 0;
 }
 
+::-moz-selection { /* Code for Firefox */
+  color: #fff;
+  background: #9AA5BB;
+}
+
+::selection {
+  color: #fff;
+  background: #9AA5BB;
+}
+
 body.loading {
   opacity: 0;
   transition: 1s linear opacity;
@@ -23,14 +33,14 @@ body {
   transition: 1s linear opacity;
 }
 
-body, h1, h2, h3, h4, p, button {
+body, h1, h2, h3, h4, h5, p, button {
   margin: 0;
   font-weight: normal;
   font-family: 'Ovo', serif;
 }
 
-p {
-  font-size: 2.5em;
+p, code {
+  font-size: 2rem;
 }
 
 button, a {
@@ -47,7 +57,6 @@ button {
   outline: none;
   border: 1px solid #333;
   padding: 10px 30px;
-  margin: 30px 0 0;
   cursor: pointer;
 }
 
@@ -76,21 +85,42 @@ h2 .result {
 }
 
 h3 {
-  font-size: 7em;
+  font-size: 3rem;
   text-align: center;
 }
 
 h3 ~ h4 {
+  margin-top: 1em;
+}
+
+h4 ~ h4 {
   margin-top: 2em;
 }
 
 h4 {
-  font-size: 4em;
+  font-size: 2rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+
+code, .code {
+  background-color: #c4c4c4;
+}
+
+.code {
+  padding: 3px 12px;
+  user-select: all;
 }
 
 @media only screen and (max-width: 992px){
   body {
     font-size: 8px;
+  }
+
+  p, code {
+    font-size: 1.5rem;
   }
 }
 
@@ -100,12 +130,12 @@ h4 {
     padding: 20px 30px;
   }
 
-  p {
-    font-size: 5em;
+  p, code {
+    font-size: 1rem;
   }
 
   h3 {
-    font-size: 6.5em;
+    font-size: 3rem;
   }
 
   section > h3 {
@@ -113,7 +143,11 @@ h4 {
   }
 
   h2 {
-    font-size: 10em;
+    font-size: 3rem;
+  }
+
+  button {
+    font-size: 1.25rem;
   }
 }
 
