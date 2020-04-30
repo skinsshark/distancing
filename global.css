@@ -130,7 +130,13 @@ code, .code {
     padding: 20px 30px;
   }
 
-  p, code {
+  code {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.1rem;
+  }
+
+  p {
     font-size: 1rem;
   }
 
@@ -144,6 +150,10 @@ code, .code {
 
   h2 {
     font-size: 3rem;
+  }
+
+  h4 ~ h4 {
+    margin-top: 1rem;
   }
 
   button {
