@@ -1,4 +1,4 @@
-import { getScriptText } from './getScriptText.js';
+import { getScriptText } from '../../getScriptText.js';
 
 export default function Content() {
   const downloadDefaultFile = () => {
