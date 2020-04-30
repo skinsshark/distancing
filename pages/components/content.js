@@ -1,8 +1,9 @@
+import { getScriptText } from './getScriptText.js';
+
 export default function Content() {
   const downloadDefaultFile = () => {
-    const fileName = require('./getScriptText.js');
     const a = document.getElementById("downloader");
-    const file = new Blob([fileName.getScriptText()], {type: "text/javascript"});
+    const file = new Blob([getScriptText()], {type: "text/javascript"});
     a.href = URL.createObjectURL(file);
     a.download = "social-distancer.min.js";
   }
