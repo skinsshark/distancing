@@ -134,6 +134,7 @@ code, .code {
   code {
     vertical-align: middle;
     font-size: 1.1rem;
+    word-break: break-all;
   }
 
   p {
