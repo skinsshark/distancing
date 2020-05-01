@@ -48,7 +48,7 @@ export default function Content() {
             Try it out now, type "<u>STAYHOME</u>" to toggle social distancing on this site
           </h3>
           <h4>
-            No visual cues or visible on-screen indicators by default, so it's your job to spread the word and tell your users of the feature. I know text input without visual feedback is hard, but so is social distancing, and you've got that
+            No visual cues or visible on-screen indicators by default, so it's your job to spread the word and tell your users of the feature. I know text input without visual feedback is hard and things might start to look a little wild, but hey, so is social distancing
           </h4>
         </article>
       </section>
