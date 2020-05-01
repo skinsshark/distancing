@@ -70,7 +70,7 @@ export default function Content() {
 
           <h4>
             <a id="downloader">
-              <button onClick={(e) => downloadDefaultFile(e.target)}>
+              <button onClick={(e) => downloadFile(e.target)}>
                 <div className="label">Download minified script</div>
                 <svg height="0.8em" viewBox="0 0 512 512" width="0.8em" xmlns="http://www.w3.org/2000/svg"><path d="m409.785156 278.5-153.785156 153.785156-153.785156-153.785156 28.285156-28.285156 105.5 105.5v-355.714844h40v355.714844l105.5-105.5zm102.214844 193.5h-512v40h512zm0 0"/></svg>
               </button>
