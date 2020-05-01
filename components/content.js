@@ -216,10 +216,13 @@ export default function Content() {
           pointer-events: none;
         }
 
+        button svg {
+          margin-left: 25px;
+        }
+
         button svg,
         button:disabled:hover svg {
           transform: rotate(-90deg);
-          margin-left: 25px;
           transition: 0.2s linear transform;
         }
 
