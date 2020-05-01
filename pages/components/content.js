@@ -1,9 +1,20 @@
+import { useState } from 'react';
 import { getScriptText } from '../../getScriptText.js';
 
 export default function Content() {
-  const downloadDefaultFile = () => {
-    const a = document.getElementById("downloader");
-    const file = new Blob([getScriptText()], {type: "text/javascript"});
+  const [customKeyword, setCustomKeyword] = useState('');
+  const isKeywordTooLong = customKeyword.length > 15;
+  const isWarningStyle = isKeywordTooLong ? 'warning' : '';
+
+  const downloadFile = (e, isDefault = true) => {
+    let file;
+    if (isDefault) { //default
+      file = new Blob([getScriptText()], {type: "text/javascript"});
+    } else {
+      file = new Blob([getScriptText(customKeyword)], {type: "text/javascript"});
+    }
+
+    const a = e.parentElement;
     a.href = URL.createObjectURL(file);
     a.download = "social-distancer.min.js";
   }
@@ -45,10 +56,10 @@ export default function Content() {
         <article>
           <h5>If you have a keyboard...</h5>
           <h3>
-            Try it out now, type "<u>STAYHOME</u>" to toggle social distancing on this site
+            Try it out now, type "<u>stayhome</u>" to toggle social distancing on this site
           </h3>
           <h4>
-            No visual cues or visible on-screen indicators by default, so it's on you to spread the word and tell your users of the feature. I know we didn't plan for this and text input without visual feedback is hard, but I guess that's how social distancing is too
+            No visual cues or visible on-screen indicators by default— it's on you to spread the word and tell your users of the feature. I know we didn't plan for this and text input without visual feedback is hard, but I guess that's how social distancing is too
           </h4>
         </article>
       </section>
@@ -59,7 +70,7 @@ export default function Content() {
 
           <h4>
             <a id="downloader">
-              <button onClick={downloadDefaultFile}>
+              <button onClick={(e) => downloadDefaultFile(e.target)}>
                 <div className="label">Download minified script</div>
                 <svg height="0.8em" viewBox="0 0 512 512" width="0.8em" xmlns="http://www.w3.org/2000/svg"><path d="m409.785156 278.5-153.785156 153.785156-153.785156-153.785156 28.285156-28.285156 105.5 105.5v-355.714844h40v355.714844l105.5-105.5zm102.214844 193.5h-512v40h512zm0 0"/></svg>
               </button>
@@ -72,12 +83,36 @@ export default function Content() {
         <article className="web-x"></article>
         <article>
           <h4>
-            Adding the script file to your website is easy. Simply paste the following to your html file, right above <code>{`</body>`}</code>. Make sure the source is pointing to your downloaded file:
+            Adding the script file to your website is easy. Simply paste the following to your html file, right after <code>{`</body>`}</code>. Make sure the source is pointing to your downloaded file:
           </h4>
           <h4 className="code">
             <code>
               {`<script type="text/javascript" src="./social-distancer.min.js"></script>`}
             </code>
+          </h4>
+        </article>
+      </section>
+
+      <section className="singular">
+        <article className="heading">
+          <h3>Customization</h3>
+        </article>
+      </section>
+
+      <section className="singular centered">
+        <article>
+          <h4>
+            Want to use a different keyword? Set a <span className={isWarningStyle}>short</span> one here <span className="together">
+              "<input className={isWarningStyle} onChange={(e) => setCustomKeyword(e.target.value)} value={customKeyword} placeholder="enter your keyword" type="text" />"
+            </span> to download your custom script below
+          </h4>
+          <h4>
+            <a id="downloader">
+              <button disabled={!customKeyword || isKeywordTooLong} onClick={(e) => downloadFile(e.target, false)}>
+                <div className="label">Download custom minified script</div>
+                <svg height="0.8em" viewBox="0 0 512 512" width="0.8em" xmlns="http://www.w3.org/2000/svg"><path d="m409.785156 278.5-153.785156 153.785156-153.785156-153.785156 28.285156-28.285156 105.5 105.5v-355.714844h40v355.714844l105.5-105.5zm102.214844 193.5h-512v40h512zm0 0"/></svg>
+              </button>
+            </a>
           </h4>
         </article>
       </section>
@@ -177,7 +212,12 @@ export default function Content() {
           }
         }
 
-        button svg {
+        button .label {
+          pointer-events: none;
+        }
+
+        button svg,
+        button:disabled:hover svg {
           transform: rotate(-90deg);
           margin-left: 25px;
           transition: 0.2s linear transform;

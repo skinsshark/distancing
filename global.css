@@ -18,6 +18,19 @@ html {
   background: #9AA5BB;
 }
 
+.warning {
+  color: #BA0000;
+}
+
+.together {
+  white-space: nowrap;
+  display: block;
+}
+
+.centered {
+  text-align: center;
+}
+
 body.loading {
   opacity: 0;
   transition: 1s linear opacity;
@@ -33,7 +46,7 @@ body {
   transition: 1s linear opacity;
 }
 
-body, h1, h2, h3, h4, h5, p, button {
+body, h1, h2, h3, h4, h5, p, button, input {
   margin: 0;
   font-weight: normal;
   font-family: 'Ovo', serif;
@@ -45,6 +58,7 @@ p, code {
 
 button, a {
   color: #000;
+  display: inline-block;
 }
 
 button {
@@ -58,15 +72,25 @@ button {
   border: 1px solid #333;
   padding: 10px 30px;
   cursor: pointer;
+  transform: 1s opacity linear;
+  opacity: 1;
 }
 
-u, .hyperlink {
+button:disabled {
+  transform: 1s opacity linear;
+  opacity: 0.5;
+}
+
+input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+u, input {
   text-decoration: none;
   border-bottom: 2px solid #000;
-}
-
-.hyperlink {
-  font-size: 0.5em;
+  font-style: italic;
 }
 
 h1 {
@@ -84,7 +108,7 @@ h2 .result {
   letter-spacing: 0.5em;
 }
 
-h3 {
+h3, input {
   font-size: 3rem;
   text-align: center;
 }
@@ -128,6 +152,10 @@ code, .code {
   p, code {
     font-size: 1.5rem;
   }
+
+  input {
+    font-size: 2rem;
+  }
 }
 
 @media only screen and (max-width: 767px){
@@ -150,16 +178,17 @@ code, .code {
     margin-top: 70px;
   }
 
-  h2 {
-    font-size: 3rem;
+  h2, h3 {
+    font-size: 2rem;
   }
 
-  h3 {
-    font-size: 3rem;
+  .instr h3,
+  .heading h3 {
+    font-size: 2rem;
   }
 
-  .instr h3 {
-    font-size: 2.5rem;
+  h4 {
+    font-size: 1.5rem;
   }
 
   h4 ~ h4 {
@@ -168,6 +197,10 @@ code, .code {
 
   button {
     font-size: 1.25rem;
+  }
+
+  input {
+    font-size: 1.5rem;
   }
 }
 
