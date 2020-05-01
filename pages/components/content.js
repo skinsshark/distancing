@@ -19,7 +19,7 @@ export default function Content() {
       <section>
         <article className="web-x"></article>
         <article>
-          <h4>A customizable, easy-to-add script for your website to enforce social distancing even on the web</h4>
+          <h4>A flexible, easy-to-add script for your website to enforce social distancing even on the web</h4>
         </article>
       </section>
 
@@ -47,7 +47,7 @@ export default function Content() {
             To try it out now, type "<u>STAYHOME</u>" to toggle social distancing on this site
           </h3>
           <h4>
-            No visual cues, no visible feedback by default, so now it's your job to spread the word and help the user become aware and make use of the feature
+            No visual cues or visible on-screen indicators by default, so it's your job to spread the word and tell your users of the feature. I know text input without visual feedback is hard, but so is social distancing, and you've got that
           </h4>
         </article>
       </section>
@@ -121,6 +121,10 @@ export default function Content() {
           width: 75vw;
         }
 
+        main section:last-child {
+          border-bottom: 1px solid #333;
+        }
+
         article {
           padding: 50px 75px 90px;
         }
@@ -151,6 +155,10 @@ export default function Content() {
           section {
             flex-wrap: wrap;
             padding: 15px 0 40px;
+          }
+
+          main section:last-child {
+            border-bottom: none;
           }
 
           article {

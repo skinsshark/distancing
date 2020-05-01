@@ -106,6 +106,7 @@ h5 {
 }
 
 code, .code {
+  display: inline-block;
   background-color: #c4c4c4;
 }
 
@@ -131,7 +132,6 @@ code, .code {
   }
 
   code {
-    display: inline-block;
     vertical-align: middle;
     font-size: 1.1rem;
   }
