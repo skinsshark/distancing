@@ -39,7 +39,7 @@ export default function Content() {
           <h5>So we can go from this</h5>
         </article>
         <article>
-          <img src="./assets/example-before.png" />
+          <a href="https://sharonzheng.com/" target="_blank" rel="noopener noreferrer"><img alt="before-social-distancing" src="./assets/example-before.png" /></a>
         </article>
       </section>
 
@@ -48,7 +48,7 @@ export default function Content() {
           <h5>To this</h5>
         </article>
         <article>
-          <img src="./assets/example-after.png" />
+          <a href="https://sharonzheng.com/" target="_blank" rel="noopener noreferrer"><img alt="after-social-distancing" src="./assets/example-after.png" /></a>
         </article>
       </section>
 
@@ -103,7 +103,7 @@ export default function Content() {
         <article>
           <h4>
             Want to use a different keyword? Set a <span className={isWarningStyle}>short</span> one here <span className="together">
-              "<input className={isWarningStyle} onChange={(e) => setCustomKeyword(e.target.value)} value={customKeyword} placeholder="enter your keyword" type="text" />"
+              "<input className={isWarningStyle} onChange={(e) => setCustomKeyword(e.target.value)} value={customKeyword} placeholder="set keyword" type="text" />"
             </span> to download your custom script below
           </h4>
           <h4>
@@ -162,7 +162,7 @@ export default function Content() {
         }
 
         article {
-          padding: 50px 75px 90px;
+          padding: 50px 70px 90px;
         }
 
         article.heading {

@@ -138,11 +138,25 @@ h5 {
 code, .code {
   display: inline-block;
   background-color: #c4c4c4;
+  word-break: break-all;
 }
 
 .code {
   padding: 3px 12px;
   user-select: all;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 20px 35px;
+}
+
+footer p {
+  font-size: 1.5rem;
+}
+
+footer a {
+  text-decoration: underline;
 }
 
 @media only screen and (max-width: 992px){
@@ -168,7 +182,6 @@ code, .code {
   code {
     vertical-align: middle;
     font-size: 1.1rem;
-    word-break: break-all;
   }
 
   p {
