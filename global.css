@@ -85,6 +85,7 @@ input {
   border: none;
   background-color: transparent;
   outline: none;
+  border-radius: 0;
 }
 
 u, input {
