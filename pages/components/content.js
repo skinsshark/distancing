@@ -41,10 +41,11 @@ export default function Content() {
         </article>
       </section>
 
-      <section className="singular">
+      <section className="singular instr">
         <article>
-          <h3 className="web-x">
-            To try it out now, type "<u>STAYHOME</u>" to toggle social distancing on this site
+          <h5>If you have a keyboard...</h5>
+          <h3>
+            Try it out now, type "<u>STAYHOME</u>" to toggle social distancing on this site
           </h3>
           <h4>
             No visual cues or visible on-screen indicators by default, so it's your job to spread the word and tell your users of the feature. I know text input without visual feedback is hard, but so is social distancing, and you've got that

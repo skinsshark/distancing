@@ -105,6 +105,11 @@ h5 {
   font-size: 1.5rem;
 }
 
+.instr h5 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
 code, .code {
   display: inline-block;
   background-color: #c4c4c4;
@@ -141,16 +146,20 @@ code, .code {
     font-size: 1rem;
   }
 
-  h3 {
-    font-size: 3rem;
-  }
-
   section > h3 {
     margin-top: 70px;
   }
 
   h2 {
     font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+  }
+
+  .instr h3 {
+    font-size: 2.5rem;
   }
 
   h4 ~ h4 {
